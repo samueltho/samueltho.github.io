@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R Markdown on sam writes</title>
+    <link>http://samueltho.github.io/tags/r-markdown/</link>
+    <description>Recent content in R Markdown on sam writes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Apr 2020 21:13:14 -0500</lastBuildDate><atom:link href="http://samueltho.github.io/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Forecasting completion dates using data from Jira and R</title>
+      <link>http://samueltho.github.io/post/2020-12-01-r-rmarkdown/</link>
+      <pubDate>Wed, 01 Apr 2020 21:13:14 -0500</pubDate>
+      
+      <guid>http://samueltho.github.io/post/2020-12-01-r-rmarkdown/</guid>
+      <description>The problem I recently found myself in a position where I needed to forecast when something our team was working on would be ready. Until that point we had quite happily been busy building without estimating the size of the tasks we were getting through. I was keen to not have to start introducing an arbitrary system of estimations - or rely on any gut feelings. By this point we had a been working together for some time, so we had enough data to be able to help with the forecasting.</description>
+    </item>
+    
+  </channel>
+</rss>

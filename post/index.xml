@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on sam writes</title>
+    <link>http://samueltho.github.io/post/</link>
+    <description>Recent content in Posts on sam writes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Apr 2020 21:13:14 -0500</lastBuildDate><atom:link href="http://samueltho.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Forecasting completion dates using data from Jira and R</title>
+      <link>http://samueltho.github.io/post/2020-12-01-r-rmarkdown/</link>
+      <pubDate>Wed, 01 Apr 2020 21:13:14 -0500</pubDate>
+      
+      <guid>http://samueltho.github.io/post/2020-12-01-r-rmarkdown/</guid>
+      <description>The problem I recently found myself in a position where I needed to forecast when something our team was working on would be ready. Until that point we had quite happily been busy building without estimating the size of the tasks we were getting through. I was keen to not have to start introducing an arbitrary system of estimations - or rely on any gut feelings. By this point we had a been working together for some time, so we had enough data to be able to help with the forecasting.</description>
+    </item>
+    
+    <item>
+      <title>Migrating from Jekyll</title>
+      <link>http://samueltho.github.io/post/migrate-from-jekyll/</link>
+      <pubDate>Wed, 02 Apr 2014 02:13:50 +0000</pubDate>
+      
+      <guid>http://samueltho.github.io/post/migrate-from-jekyll/</guid>
+      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
+▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
+▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+  </channel>
+</rss>
