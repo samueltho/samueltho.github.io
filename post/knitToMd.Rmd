@@ -1,5 +1,5 @@
 ---
-title: "testing_plots"
+title: "testing_knitting_plots"
 output: md_document
 ---
 
