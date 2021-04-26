@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Hugo 0.81.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <meta property="og:url" content="http://samueltho.github.io/post/project_forecasting/">
+
+  <title> - Sam writes</title>
+  <meta property="og:title" content=" - Sam writes">
+  <meta property="og:type" content="article">
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/journal.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Sam writes">
+
+</head>
+
+<body>
+  <div class="container">
+
+    <nav class="site-nav">
+      <a href="http://samueltho.github.io/">Index</a>
+    </nav>
+
+
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title"></h1>
+      <time class="post-date" datetime="0001-01-01 00:00:00 UTC">01 Jan 0001</time>
+    </header>
+
+    <h1 id="the-problem">The problem</h1>
+<p>I recently found myself in a position where I needed to forecast when
+something our team was working on would be ready. Until that point we
+had quite happily been building without estimating the size of the tasks
+we were getting through. I was keen to not have to start introducing an
+arbitrary system of estimations - or rely on any <em>gut feelings</em>. By this
+point we had a been working together for some time, so we had enough
+data to be able to help produce a forecasting.</p>
+<p>I decided that what we needed was to estimate the typical number of
+tasks we could get through on a typical working day. We also had some
+deadlines looming, so having confidence intervals would also be useful.
+In order to achieve this I bootstrapped the mean number of tickets that
+were moved on a given day to “done”. I then used the results of the
+bootstrap to be able to forecast different scenarios with various
+confidence intervals.</p>
+<p>In this post, I will explain a bit how to conduct such a forecast using
+packages from the extended Tidyverse in R and the CSV download from
+Jira.</p>
+<h1 id="setup">Setup</h1>
+<p>This forecast was produced using the following packages. We need the
+core Tidyverse for data reading, manipulation and visualisation. The
+Infer package takes care of the simumlations. I also used Janitor and
+Lubridate to help clean up the messy data you get by default when using
+the CSV download in Jira. Lastly I used the magritrr package, for some
+of the other piping operations, as I like the consistency the exposition
+pipe brings when working with some old base functions.</p>
+<p>I unfortunately didn’t have access to the Jira API, so I had to make do
+with the CSV download. I only needed to filter for all the tasks that my
+team had worked on, then downloaded the file. Then read the csv file.</p>
+<pre><code>raw_jira_data &lt;- read_csv(your_jira_csv_file)
+## Warning: Duplicated column names deduplicated: 'Sprint' =&gt; 'Sprint_1' [11],
+## 'Sprint' =&gt; 'Sprint_2' [12], 'Sprint' =&gt; 'Sprint_3' [13]
+</code></pre>
+<h1 id="data-preparation">Data preparation</h1>
+<p>Before we can create our forecast we need to clean up our data. In this
+case the main cleaning to be done is setting dates to the correct class
+and removing spaces from column names. The lubridate pacakge helps us
+with the dates, and the clean_names() function from the Janitor package
+handily removes all those spaces that come in the column names from the
+Jira download.</p>
+<pre><code>clean_jira_data &lt;- raw_jira_data %&gt;%
+  janitor::clean_names() %&gt;%
+  mutate(across(ends_with(&quot;ed&quot;), lubridate::dmy_hm))
+## Warning: All formats failed to parse. No formats found.
+</code></pre>
+<p>Our Jira data tells us what <em>did</em> happen, but it doesn’t tell us what
+<em>didn’t</em>. On some days the team completed several tasks. On others none.
+We need to track both scenarios, so having a vector of completion dates
+will be helpful.</p>
+<pre><code>task_completion_dates &lt;- clean_jira_data %&gt;%
+  #to only account for tasks that are completed
+  filter(!is.na(resolved)) %&gt;%
+  #to extract only the completion date as a vector
+  pull(resolved)
+</code></pre>
+<p>And then we want to create a tibble that includes all the dates in the
+period for which we have data and how many tasks were completed on each
+day. We can do this by building a sequence from a start to end date with
+all possible dates, and then sum the number of tasks completed on that
+date. In order to sum by row, we need to use the rowwise function.</p>
+<pre><code>start_date &lt;- ymd('2021-02-15')
+end_date &lt;- ymd('2021-04-10')
+
+actual_tasks_per_day &lt;- as_tibble_col(seq(start_date, end_date, 1), column_name = &quot;date&quot;) %&gt;%
+  filter(!wday(date) %in% c(7,1))  %&gt;%
+  rowwise() %&gt;%
+  mutate(tasks_completed = sum(date(task_completion_dates) == date)) %&gt;%
+  ungroup()
+</code></pre>
+<p>This gives us a table with all the dates in our data range, and the
+number of tasks completed on that day. This is perfect for building a
+simulation.</p>
+<pre><code>tail(actual_tasks_per_day, n=3)
+## # A tibble: 3 x 2
+##   date       tasks_completed
+##   &lt;date&gt;               &lt;int&gt;
+## 1 2021-04-07               1
+## 2 2021-04-08               0
+## 3 2021-04-09               0
+</code></pre>
+<h1 id="simulating">Simulating</h1>
+<p>Now onto our simulation! We want to imagine what would happen if we
+could repeat the eight or so weeks thousands of times over. In some
+cases, maybe we have a good run, and have more days where we deliver at
+least something - or several things. And vice versa. This variability
+will help us not only understand our typical perfomance, but can also
+help us understand how likely it is we deliver more or less than
+planned.</p>
+<p>The simulation is run with infer package. We specify the number of tasks
+as the variable of interest, and we caculate the mean number completed
+per day per simulation.</p>
+<pre><code>simulation_results &lt;- actual_tasks_per_day %&gt;%
+  specify(response = tasks_completed) %&gt;%
+  generate(reps = 10000, type = &quot;bootstrap&quot;) %&gt;%
+  calculate(stat = &quot;mean&quot;) 
+
+head(simulation_results, n=3)
+## # A tibble: 3 x 2
+##   replicate  stat
+##       &lt;int&gt; &lt;dbl&gt;
+## 1         1  1.75
+## 2         2  1.42
+## 3         3  1.45
+</code></pre>
+<p>Before we visualise the results, lets have a quick look. Using quantiles
+is not the best method to calculate the confidence intervals, but it is
+much easier - so lets do that. I’m using the exposition pipe from the
+magritrr package for consistency of style with all the other code chunks
+above.</p>
+<pre><code>simulation_results %$%
+  quantile(stat, probs = seq(0,1,.1))
+##    0%   10%   20%   30%   40%   50%   60%   70%   80%   90%  100% 
+## 0.725 1.200 1.300 1.375 1.425 1.475 1.550 1.625 1.700 1.825 2.625
+</code></pre>
+<p>So what does this tell us? In a typical simulation we would complete at
+least 1.475 tasks per day. If we need more confidence - say because of
+something time sensitive - we could assume 1.2 as 80% of simulations had
+at least this average of tasks completed per day.</p>
+<h2 id="visualising-the-results">Visualising the results</h2>
+<p>We have been using the results to forecast with probabilities of us
+finishing certain pieces of work in a certain amount of time.</p>
+<pre><code>size_of_work &lt;- tribble(
+  ~t_shirt,  ~max_size,
+  &quot;S&quot;, 15,
+  &quot;M&quot;, 30,
+  &quot;L&quot;, 60
+)
+
+extract_days_by_probability &lt;- function(results, probability) {
+  results %$%
+    quantile(stat, probs = probability) %&gt;%
+    unname() 
+}
+
+pessimistic_velocity &lt;- simulation_results %&gt;%
+extract_days_by_probability(., 0.25)
+
+average_velocity &lt;- simulation_results %&gt;%
+extract_days_by_probability(., 0.5)
+
+optimistic_velocity &lt;- simulation_results %&gt;%
+extract_days_by_probability(., 0.75)
+  
+
+calculate_days_to_complete &lt;- function(tasks_per_day, size) {
+  i &lt;- tasks_per_day
+  days &lt;- 0
+  while(i &lt; size) {
+    days &lt;- days + 1
+    i = i + tasks_per_day
+  }
+  return(days)
+}
+
+size_of_work %&gt;%
+  rowwise() %&gt;%
+  mutate(pessimistic_weeks = calculate_days_to_complete(pessimistic_velocity, max_size) / 5,
+         average_weeks = calculate_days_to_complete(average_velocity, max_size) / 5,
+         optimistic_weeks = calculate_days_to_complete(optimistic_velocity, max_size) / 5) 
+## # A tibble: 3 x 5
+## # Rowwise: 
+##   t_shirt max_size pessimistic_weeks average_weeks optimistic_weeks
+##   &lt;chr&gt;      &lt;dbl&gt;             &lt;dbl&gt;         &lt;dbl&gt;            &lt;dbl&gt;
+## 1 S             15               2.2             2              1.8
+## 2 M             30               4.4             4              3.6
+## 3 L             60               9               8              7.2
+
+tibble(scenario = c(&quot;pessimistic&quot;, &quot;average&quot;, &quot;optimistic&quot;)) 
+## # A tibble: 3 x 1
+##   scenario   
+##   &lt;chr&gt;      
+## 1 pessimistic
+## 2 average    
+## 3 optimistic
+</code></pre>
+<p>Playground</p>
+<pre><code>simulation_results %&gt;%
+  ggplot(aes(stat)) +
+  geom_histogram(bins = 120)
+</code></pre>
+<p><img src="project_forecasting_files/figure-markdown_strict/unnamed-chunk-14-1.png" alt=""></p>
+<p>1.4996</p>
+<p>calculate_bootstrap_tasks_day &lt;- function(teams_resolved_dates,
+start_date = sputnik_1_start, reps = 1000, probs = c(0.01, 0.05,
+0.25, 0.5, 0.75, 0.95, 0.99), names = TRUE) {
+as_tibble_col(seq(sputnik_1_start, today(), 1), column_name =
+“date”) %&gt;% filter(!weekdays(date) %in% c(“Saturday”, “Sunday”))
+%&gt;% rowwise() %&gt;% mutate(tasks_completed =
+sum(!!date(teams_resolved_dates) == date)) %&gt;% specify(response =
+tasks_completed) %&gt;% generate(reps = reps, type = “bootstrap”)
+%&gt;% calculate(stat = “mean”) %$% quantile(stat, probs = probs, names
+= names) }</p>
+<p>tidy_jira_data %&gt;% filter(!is.na(resolved)) %&gt;% pull(resolved)</p>
+<p>calculate_days_to_complete &lt;- function(tasks_per_day, size) { i
+&lt;- tasks_per_day days &lt;- 0 while(i &lt; size) { days &lt;- days</p>
+<ul>
+<li>1 i = i + tasks_per_day } return(days) }</li>
+</ul>
+<p>probability_scenarios %&gt;% rowwise() %&gt;% mutate(tasks_per_day =
+calculate_bootstrap_tasks_day(bart_resolved_dates, probs =
+chance_to_not_finish, names = FALSE), days_to_complete =
+calculate_days_to_complete(tasks_per_day,size), weeks_to_complete
+= days_to_complete / 5)</p>
+<p>2021-02-15</p>
+
+
+  </article>
+
+
+      <footer class="site-footer">
+        <span itemscope itemtype="http://schema.org/Person">
+          <link itemprop="url" href="http://samueltho.github.io/">
+          <span itemprop="name"></span>
+
+          <br>
+
+          <a itemprop="sameAs" href="https://github.com/samueltho" title="GitHub">GH</a>
+
+          
+
+          
+        </span>
+
+        <!-- Build date: Mon, 26 Apr 2021 23:00:39 CEST -->
+      </footer>
+    </div>
+
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  </body>
+</html>
+
