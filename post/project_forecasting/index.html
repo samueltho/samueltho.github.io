@@ -136,9 +136,9 @@ head(simulation_results, n=3)
 ## # A tibble: 3 x 2
 ##   replicate  stat
 ##       &lt;int&gt; &lt;dbl&gt;
-## 1         1  1.75
-## 2         2  1.42
-## 3         3  1.45
+## 1         1  1.7 
+## 2         2  1.3 
+## 3         3  1.25
 </code></pre>
 <p>Before we visualise the results, lets have a quick look. Using quantiles
 is not the best method to calculate the confidence intervals, but it is
@@ -148,7 +148,7 @@ above.</p>
 <pre><code>simulation_results %$%
   quantile(stat, probs = seq(0,1,.1))
 ##    0%   10%   20%   30%   40%   50%   60%   70%   80%   90%  100% 
-## 0.725 1.200 1.300 1.375 1.425 1.475 1.550 1.625 1.700 1.825 2.625
+## 0.775 1.200 1.300 1.350 1.425 1.475 1.550 1.625 1.700 1.800 2.625
 </code></pre>
 <p>So what does this tell us? In a typical simulation we would complete at
 least 1.475 tasks per day. If we need more confidence - say because of
@@ -259,7 +259,7 @@ calculate_days_to_complete(tasks_per_day,size), weeks_to_complete
           
         </span>
 
-        <!-- Build date: Mon, 26 Apr 2021 23:00:39 CEST -->
+        <!-- Build date: Mon, 26 Apr 2021 23:05:35 CEST -->
       </footer>
     </div>
 
