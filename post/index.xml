@@ -6,33 +6,20 @@
     <description>Recent content in Posts on Sam writes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate><atom:link href="http://samueltho.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://samueltho.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello R Markdown</title>
-      <link>http://samueltho.github.io/post/2020-12-01-r-rmarkdown/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      <title>Forecasting time to build a feature with R &amp; Jira</title>
+      <link>http://samueltho.github.io/post/project_forecasting/</link>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://samueltho.github.io/post/2020-12-01-r-rmarkdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>http://samueltho.github.io/post/doesthiswork/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
-      
-      <guid>http://samueltho.github.io/post/doesthiswork/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.</description>
+      <guid>http://samueltho.github.io/post/project_forecasting/</guid>
+      <description>The problem I recently found myself in a position where I needed to forecast when something our team was working on would be ready. Until that point we had quite happily been building without estimating the size of the tasks we were getting through. I was keen to not have to start introducing an arbitrary system of estimations - or rely on any gut feelings. By this point we had a been working together for some time, so we had enough data to be able to help produce a forecasting.</description>
     </item>
     
     <item>
       <title>Getting Started with Hugo</title>
       <link>http://samueltho.github.io/post/hugoisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>http://samueltho.github.io/post/hugoisforlovers/</guid>
       <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
@@ -41,35 +28,6 @@ More complete instructions are available at installing hugo
 Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
 Follow the following steps:
  Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
-    </item>
-    
-    <item>
-      <title>Getting Started with Hugo</title>
-      <link>http://samueltho.github.io/post/project_forecasting/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>http://samueltho.github.io/post/project_forecasting/</guid>
-      <description>The problem I recently found myself in a position where I needed to forecast when something our team was working on would be ready. Until that point we had quite happily been building without estimating the size of the tasks we were getting through. I was keen to not have to start introducing an arbitrary system of estimations - or rely on any gut feelings. By this point we had a been working together for some time, so we had enough data to be able to help produce a forecasting.</description>
-    </item>
-    
-    <item>
-      <title>testing_knitting_plots</title>
-      <link>http://samueltho.github.io/post/knittomd/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://samueltho.github.io/post/knittomd/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-When you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</description>
-    </item>
-    
-    <item>
-      <title>testing_plots</title>
-      <link>http://samueltho.github.io/post/plots/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://samueltho.github.io/post/plots/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-When you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:</description>
     </item>
     
   </channel>

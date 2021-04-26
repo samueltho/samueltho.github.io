@@ -6,38 +6,47 @@
     <description>Recent content in Tags on Sam writes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate><atom:link href="http://samueltho.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://samueltho.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>plot</title>
-      <link>http://samueltho.github.io/tags/plot/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      <title>Bootstrap</title>
+      <link>http://samueltho.github.io/tags/bootstrap/</link>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://samueltho.github.io/tags/plot/</guid>
+      <guid>http://samueltho.github.io/tags/bootstrap/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R Markdown</title>
-      <link>http://samueltho.github.io/tags/r-markdown/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      <title>Jira</title>
+      <link>http://samueltho.github.io/tags/jira/</link>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://samueltho.github.io/tags/r-markdown/</guid>
+      <guid>http://samueltho.github.io/tags/jira/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>regression</title>
-      <link>http://samueltho.github.io/tags/regression/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      <title>Project Management</title>
+      <link>http://samueltho.github.io/tags/project-management/</link>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>http://samueltho.github.io/tags/regression/</guid>
+      <guid>http://samueltho.github.io/tags/project-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>http://samueltho.github.io/tags/r/</link>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://samueltho.github.io/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>development</title>
       <link>http://samueltho.github.io/tags/development/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>http://samueltho.github.io/tags/development/</guid>
       <description></description>
@@ -46,7 +55,7 @@
     <item>
       <title>go</title>
       <link>http://samueltho.github.io/tags/go/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>http://samueltho.github.io/tags/go/</guid>
       <description></description>
@@ -55,7 +64,7 @@
     <item>
       <title>golang</title>
       <link>http://samueltho.github.io/tags/golang/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>http://samueltho.github.io/tags/golang/</guid>
       <description></description>
@@ -64,7 +73,7 @@
     <item>
       <title>hugo</title>
       <link>http://samueltho.github.io/tags/hugo/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>http://samueltho.github.io/tags/hugo/</guid>
       <description></description>

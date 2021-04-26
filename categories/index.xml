@@ -6,11 +6,29 @@
     <description>Recent content in Categories on Sam writes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate><atom:link href="http://samueltho.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://samueltho.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Science</title>
+      <link>http://samueltho.github.io/categories/data-science/</link>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://samueltho.github.io/categories/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jira</title>
+      <link>http://samueltho.github.io/categories/jira/</link>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://samueltho.github.io/categories/jira/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>R</title>
       <link>http://samueltho.github.io/categories/r/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>http://samueltho.github.io/categories/r/</guid>
       <description></description>
@@ -19,7 +37,7 @@
     <item>
       <title>Development</title>
       <link>http://samueltho.github.io/categories/development/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>http://samueltho.github.io/categories/development/</guid>
       <description></description>
@@ -28,7 +46,7 @@
     <item>
       <title>golang</title>
       <link>http://samueltho.github.io/categories/golang/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>http://samueltho.github.io/categories/golang/</guid>
       <description></description>

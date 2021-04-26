@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>R on Sam writes</title>
-    <link>http://samueltho.github.io/categories/r/</link>
-    <description>Recent content in R on Sam writes</description>
+    <title>Jira on Sam writes</title>
+    <link>http://samueltho.github.io/categories/jira/</link>
+    <description>Recent content in Jira on Sam writes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://samueltho.github.io/categories/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://samueltho.github.io/categories/jira/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Forecasting time to build a feature with R &amp; Jira</title>
       <link>http://samueltho.github.io/post/project_forecasting/</link>
