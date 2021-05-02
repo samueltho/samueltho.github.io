@@ -2,41 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://samueltho.github.io/tags/bootstrap/</loc>
-    <lastmod>2021-04-02T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://samueltho.github.io/categories/</loc>
-    <lastmod>2021-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://samueltho.github.io/categories/data-science/</loc>
-    <lastmod>2021-04-02T00:00:00+00:00</lastmod>
+    <loc>http://samueltho.github.io/tags/forecasting/</loc>
+    <lastmod>2021-04-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://samueltho.github.io/post/project_forecasting/</loc>
-    <lastmod>2021-04-02T00:00:00+00:00</lastmod>
+    <loc>http://samueltho.github.io/categories/forecasting/</loc>
+    <lastmod>2021-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://samueltho.github.io/tags/jira/</loc>
-    <lastmod>2021-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://samueltho.github.io/categories/jira/</loc>
-    <lastmod>2021-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://samueltho.github.io/post/</loc>
-    <lastmod>2021-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://samueltho.github.io/tags/project-management/</loc>
-    <lastmod>2021-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://samueltho.github.io/tags/r/</loc>
-    <lastmod>2021-04-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://samueltho.github.io/categories/r/</loc>
-    <lastmod>2021-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://samueltho.github.io/</loc>
-    <lastmod>2021-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://samueltho.github.io/tags/</loc>
-    <lastmod>2021-04-02T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://samueltho.github.io/post/project_forecasting/</loc>
+    <lastmod>2021-04-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://samueltho.github.io/categories/development/</loc>
     <lastmod>2021-03-01T00:00:00+00:00</lastmod>
