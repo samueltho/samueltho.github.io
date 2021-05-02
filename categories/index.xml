@@ -25,23 +25,5 @@
       <description></description>
     </item>
     
-    <item>
-      <title>Development</title>
-      <link>http://samueltho.github.io/categories/development/</link>
-      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://samueltho.github.io/categories/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>http://samueltho.github.io/categories/golang/</link>
-      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
-      
-      <guid>http://samueltho.github.io/categories/golang/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

@@ -8,12 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://samueltho.github.io/tags/forecasting/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Team velocity forecasting with R</title>
+      <title>Forecasting time to build a feature using Jira and R</title>
       <link>http://samueltho.github.io/post/project_forecasting/</link>
       <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>http://samueltho.github.io/post/project_forecasting/</guid>
-      <description>The problem I recently found myself in a position where I needed to forecast when an upcoming feature our team was working on would be done. Until that point we had quite happily been building without estimating the size of the work we were getting through. I was keen to not have to start introducing an arbitrary system of estimations - or rely on any gut feelings. Fortunately by this point we had a been working together for some time, so we had enough data to be able to help make a forecast.</description>
+      <description>The problem I recently found myself in a position where I needed to forecast when an upcoming feature our team was about to start working on would be done. Until that point we had quite happily been building without estimating the size of the work we were getting through. I was keen to not have to start introducing an arbitrary system of estimations - or rely on any gut feelings. Fortunately by this point we had a been working together for some time, so we had enough data to be able to help make a forecast.</description>
     </item>
     
   </channel>
