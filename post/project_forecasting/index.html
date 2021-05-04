@@ -131,9 +131,9 @@ will be helpful.</p>
 <p>And then we want to create a tibble that includes all the dates in the
 period for which we have data and how many tasks were completed on each
 day. We can do this by building a sequence from a start to end date with
-all possible dates, and then sum the number of tasks completed on that
-date using our vector created above. In order to sum by row, we need to
-use the <code>rowwise</code> function.</p>
+all possible dates, and then sum the number of tasks completed on each
+individual date using our vector created above. In order to sum by row,
+we need to use the <code>rowwise</code> function.</p>
 <pre><code>start_date &lt;- ymd('2021-02-15')
 end_date &lt;- ymd('2021-04-10')
 
@@ -271,10 +271,10 @@ question - “when will it be done?”.</p>
              pessimistic_weeks = &quot;Pessimistic&quot;) %&gt;%
   cols_width(everything() ~ px(120))
 
-as_raw_html(final_table)
+gtsave(final_table, &quot;final_table.png&quot;)
 </code></pre>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<p><img src="project_forecasting_files/figure-markdown_strict/unnamed-chunk-14-1.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/samueltho/public_images_github_pages/main/final_table.png" alt="The final output - a reference table for us touse"></p>
 <h1 id="wrapping-up">Wrapping up</h1>
 <p>A simple reference like the table above has really helped us understand
 and forecast delivery dates. There are many other ways you can use the
@@ -300,7 +300,7 @@ performance over time.</p>
           
         </span>
 
-        <!-- Build date: Tue, 04 May 2021 22:53:12 CEST -->
+        <!-- Build date: Tue, 04 May 2021 23:09:21 CEST -->
       </footer>
     </div>
 
