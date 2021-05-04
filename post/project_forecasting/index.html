@@ -63,46 +63,21 @@ Jira.</p>
 care of the simulations. <code>gt</code> and <code>glue</code> will help us make our human
 readable table. I also used <code>janitor</code> and <code>lubridate</code> to help clean up
 the messy data you get by default when using the CSV download in Jira.</p>
-<pre><code>#for data manipulation
+<pre><code># for data manipulation
 library(tidyverse)
-## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
-## ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
-## ✓ tibble  3.1.0     ✓ dplyr   1.0.5
-## ✓ tidyr   1.1.3     ✓ stringr 1.4.0
-## ✓ readr   1.4.0     ✓ forcats 0.5.1
-## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()
 library(lubridate)
-## 
-## Attaching package: 'lubridate'
-## The following objects are masked from 'package:base':
-## 
-##     date, intersect, setdiff, union
 library(janitor)
-## 
-## Attaching package: 'janitor'
-## The following objects are masked from 'package:stats':
-## 
-##     chisq.test, fisher.test
-#for simulations
+# for simulations
 library(infer)
-#for the output table
+# for the output table
 library(gt)
 library(glue)
-## 
-## Attaching package: 'glue'
-## The following object is masked from 'package:dplyr':
-## 
-##     collapse
 </code></pre>
 <p>I unfortunately didn’t have access to the Jira API, so I had to make do
 with the CSV download. In Jira I only needed to filter for all the tasks
 that my team had worked on (using a project filter), then downloaded the
 file. I then read it in.</p>
 <pre><code>raw_jira_data &lt;- read_csv(your_jira_csv_file)
-## Warning: Duplicated column names deduplicated: 'Sprint' =&gt; 'Sprint_1' [11],
-## 'Sprint' =&gt; 'Sprint_2' [12], 'Sprint' =&gt; 'Sprint_3' [13]
 </code></pre>
 <h1 id="data-preparation">Data preparation</h1>
 <p>Before we can create our forecast we need to clean up our data. In this
@@ -115,7 +90,6 @@ from the Jira download.</p>
   raw_jira_data %&gt;%
   janitor::clean_names() %&gt;%
   mutate(across(ends_with(&quot;ed&quot;), lubridate::dmy_hm))
-## Warning: All formats failed to parse. No formats found.
 </code></pre>
 <p>Our Jira data tells us what <em>did</em> happen, but it doesn’t tell us what
 <em>didn’t</em>. On some days the team completed several tasks. On others none.
@@ -123,9 +97,9 @@ We need to track both scenarios, so having a vector of completion dates
 will be helpful.</p>
 <pre><code>task_completion_dates &lt;- 
   clean_jira_data %&gt;%
-  #to only account for tasks that are completed
+  # to only account for tasks that are completed
   filter(!is.na(resolved)) %&gt;%
-  #to extract only the completion date as a vector
+  # to extract only the completion date as a vector
   pull(resolved)
 </code></pre>
 <p>And then we want to create a tibble that includes all the dates in the
@@ -300,7 +274,7 @@ performance over time.</p>
           
         </span>
 
-        <!-- Build date: Tue, 04 May 2021 23:09:21 CEST -->
+        <!-- Build date: Tue, 04 May 2021 23:16:29 CEST -->
       </footer>
     </div>
 
