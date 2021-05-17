@@ -38,17 +38,16 @@
 
     <h1 id="the-problem">The problem</h1>
 <p>I recently found myself in a position where I needed to forecast when an
-upcoming feature our team was about to start working on would be done.
+upcoming feature our team was about to start working on would be completed.
 Until that point we had quite happily been building without estimating
-the size of the work we were getting through. I was keen to not have to
-start introducing an arbitrary system of estimations - or rely on any
-<em>gut feelings</em>. Fortunately by this point we had a been working together
+the size of the work we were getting through. I was keen to not rely on any
+<em>gut feelings</em> to figure this out. Fortunately by this point we had a been working together
 for some time, so we had enough data to be able to help make a forecast.</p>
 <p>I decided that what we needed was to estimate the typical number of
-tasks we could get through on a typical working day. We already had some
+tasks we could complete on a typical working day. We already had some
 reference data indicating the typical number of tasks a feature has, so
-knowing our daily burn rate complemented that data very well. We also
-had some deadlines looming, so having confidence intervals on our
+knowing our daily burn rate complemented that very well. We also
+had some deadlines looming, so having confidence intervals for our
 forecast would also be useful.</p>
 <p>I used our existing data to bootstrap the mean number of tickets that
 would be moved on a given day to “done”. I then used the results of the
@@ -80,7 +79,7 @@ file. I then read it in.</p>
 <pre><code>raw_jira_data &lt;- read_csv(your_jira_csv_file)
 </code></pre>
 <h1 id="data-preparation">Data preparation</h1>
-<p>Before we can create our forecast we need to clean up our data. In this
+<p>Before we can create our forecast we need to clean the data. In this
 case the main cleaning to be done is setting dates to the correct class
 and removing spaces from column names. The <code>lubridate</code> package helps us
 with the dates, and the <code>clean_names()</code> function from the <code>janitor</code>
@@ -93,7 +92,7 @@ from the Jira download.</p>
 </code></pre>
 <p>Our Jira data tells us what <em>did</em> happen, but it doesn’t tell us what
 <em>didn’t</em>. On some days the team completed several tasks. On others none.
-We need to track both scenarios, so having a vector of completion dates
+We need to track both scenarios, so having a vector of all possible completion dates
 will be helpful.</p>
 <pre><code>task_completion_dates &lt;- 
   clean_jira_data %&gt;%
@@ -169,7 +168,7 @@ at least this average of tasks completed per day.</p>
 <h2 id="visualising-the-results">Visualising the results</h2>
 <p>We have been using the results to forecast how many weeks it will take
 us to finish a certain feature. To visualise the results of the
-simulation, I will create a table with different sized
+simulation I will create a table with different sized
 features/projects, then use our simulation data to determine how long it
 might take us to deliver.</p>
 <p>Lets first make a reference table of the potential size of upcoming
@@ -274,7 +273,7 @@ performance over time.</p>
           
         </span>
 
-        <!-- Build date: Tue, 04 May 2021 23:27:21 CEST -->
+        <!-- Build date: Mon, 17 May 2021 22:26:29 CEST -->
       </footer>
     </div>
 
