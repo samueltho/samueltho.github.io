@@ -2,10 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://samueltho.github.io/tags/bouldering/</loc>
-    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://samueltho.github.io/categories/</loc>
+    <lastmod>2021-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://samueltho.github.io/tags/descovery/</loc>
+    <lastmod>2021-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://samueltho.github.io/categories/descovery/</loc>
+    <lastmod>2021-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://samueltho.github.io/tags/inception/</loc>
+    <lastmod>2021-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://samueltho.github.io/categories/inception/</loc>
+    <lastmod>2021-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://samueltho.github.io/post/</loc>
+    <lastmod>2021-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://samueltho.github.io/tags/product-management/</loc>
+    <lastmod>2021-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://samueltho.github.io/categories/product-management/</loc>
+    <lastmod>2021-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://samueltho.github.io/</loc>
+    <lastmod>2021-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://samueltho.github.io/tags/starting-together/</loc>
+    <lastmod>2021-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://samueltho.github.io/categories/starting-together/</loc>
+    <lastmod>2021-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://samueltho.github.io/tags/</loc>
+    <lastmod>2021-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://samueltho.github.io/post/to_discover_or_not/</loc>
+    <lastmod>2021-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://samueltho.github.io/tags/bouldering/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://samueltho.github.io/tags/climbing/</loc>
@@ -20,16 +56,7 @@
     <loc>http://samueltho.github.io/tags/lockdown/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://samueltho.github.io/post/</loc>
-    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://samueltho.github.io/</loc>
-    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://samueltho.github.io/tags/sport-climbing/</loc>
-    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://samueltho.github.io/tags/</loc>
     <lastmod>2021-05-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://samueltho.github.io/categories/training/</loc>

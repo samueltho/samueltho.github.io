@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Product Management on Sam writes</title>
+    <link>http://samueltho.github.io/categories/product-management/</link>
+    <description>Recent content in Product Management on Sam writes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://samueltho.github.io/categories/product-management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The pros and cons of a discovery week</title>
+      <link>http://samueltho.github.io/post/to_discover_or_not/</link>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://samueltho.github.io/post/to_discover_or_not/</guid>
+      <description>Reflections on discoveries I was recently chatting to someone in my team and we spent a few moments discussing how we had not had a team &amp;ldquo;kick off&amp;rdquo;/&amp;ldquo;inception&amp;rdquo;/&amp;ldquo;discovery&amp;rdquo; week for the product/initiative we were working on. This got me thinking about how incredible achievement it was that we had managed to align as a team and start building something new from the ground up all within a few days.
+In this case it was quite easy not to have an extensive discovery week: the problem we were needing to solve was in essence handed to us - our team is building some services and algorithms that connect to something much bigger.</description>
+    </item>
+    
+  </channel>
+</rss>
